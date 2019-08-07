@@ -1,5 +1,5 @@
 package basiclibrary;
-
+//This method will be used to get an average from an array of integers
 public class Averages {
     public static int averages(int[] arr){
         int sum = 0;

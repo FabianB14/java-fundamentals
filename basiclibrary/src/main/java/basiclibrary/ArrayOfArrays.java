@@ -3,7 +3,7 @@ package basiclibrary;
 import java.util.Arrays;
 
 public class ArrayOfArrays {
-
+//This method will take in a 2D array and will return the array with the lowest average
     public static int[] lowestOfArrays(int[][] arrOfArr) {
         Averages avgArr = new Averages();
         int lowest = 0;
