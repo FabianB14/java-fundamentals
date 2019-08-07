@@ -3,21 +3,20 @@ package basiclibrary;
 import java.util.Arrays;
 
 public class ArrayOfArrays {
-
-//    public static int[] lowestOfArrays(int[][] arrOfArr){
-//        Averages avgArr = new Averages();
-//        int[] savedArr;
-//        int check;
-//        int[] averageArray = new int[arrOfArr.length];
-//        for(int i = 0; i < arrOfArr.length; i++){
-//           averageArray[i] = avgArr.averages(arrOfArr[i]);
-//           check = averageArray[i];
-//           if(i > 0) {
-//               if (averageArray[i] < averageArray[i - 1] || check > check ) {
-//                savedArr = arrOfArr[i];
-//               }
-//           }
-//        }
-//        return
-//    }
+//This method will take in a 2D array and will return the array with the lowest average
+    public static int[] lowestOfArrays(int[][] arrOfArr) {
+        Averages avgArr = new Averages();
+        int lowest = 0;
+        int[] averageArray = new int[arrOfArr.length];
+        int check = Averages.averages(arrOfArr[0]);
+        for (int i = 0; i < arrOfArr.length; i++) {
+            averageArray[i] = avgArr.averages(arrOfArr[i]);
+                if (averageArray[i] <= check) {
+                    check = averageArray[i];
+                     lowest = i;
+            }
+        }
+        System.out.println(Arrays.toString(arrOfArr[lowest]));
+        return arrOfArr[lowest];
+    }
 }
