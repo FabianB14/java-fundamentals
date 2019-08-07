@@ -29,7 +29,7 @@ System.out.println("I own " + turtleCount + " " + pluralize("turtle", turtleCoun
     int totalCount = 0;
     int headsCount = 0;
 
-    while(headsCount <= num){
+    while(headsCount < num){
       double flipped = Math.random();
       if(flipped >= .5){
         System.out.println("Heads");
@@ -42,6 +42,7 @@ System.out.println("I own " + turtleCount + " " + pluralize("turtle", turtleCoun
     }
     System.out.println("It took " + totalCount + " " + pluralize("flip", totalCount) + " to get " + headsCount + " " + pluralize("head", headsCount) + " " + "in a row.");
   }
+
   public static void clock(){
     while(0==0){
       try {
