@@ -11,28 +11,31 @@ public class Maps {
                 {55, 54, 60, 53, 59, 57, 61},
                 {65, 56, 55, 52, 55, 62, 57}
         };
-       System.out.println(maps(weeklyMonthTemperatures));
+      System.out.println(maps(weeklyMonthTemperatures));
     }
-    public static HashSet maps(int[][]arrOfArr) {
+    public static HashSet<String> maps(int[][]arrOfArr) {
         HashSet<Integer> temps = new HashSet<>();
         HashSet <String> tempsDone = new HashSet<>();
-        int min = 0;
+        int min = 100;
         int max = 0;
         for (int i = 0; i < arrOfArr.length; i++) {
             for (int j = 0; j < arrOfArr[i].length; j++) {
                 if (arrOfArr[i][j] > max) {
-                    min = max;
                     max = arrOfArr[i][j];
+                }
+                if(arrOfArr[i][j]< min){
+                    min = arrOfArr[i][j];
                 }
                 temps.add(arrOfArr[i][j]);
             }
         }
               tempsDone.add("High:" + max );
               tempsDone.add("Low:" + min );
-        for( Integer temp : temps){
-            for (int i = min; i < max; min++) {
+        for(Integer temp : temps){
+            for (int i = min; i < max; i++){
+                System.out.println(temp);
                 if (temp != i) {
-                    tempsDone.add("Never saw temperature:" + min);
+                    tempsDone.add("Never saw temperature:" + i);
                 }
             }
         }
