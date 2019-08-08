@@ -18,11 +18,15 @@ public class Path {
             while (scan.hasNextLine()) {
                 count++;
                 String line = scan.nextLine();
-                String lineEnd = line.substring(line.length() - 1);
-                if (lineEnd != ";") {
-                    System.out.println("Line " + count + ": is missing semicolon");
-                }
+                if(line.length() != 0) {
+                    String lineEnd = line.substring(line.length()-1);
 
+                    System.out.println(lineEnd);
+
+                    if (!lineEnd.equals(";") && !lineEnd.equals("{")  && !lineEnd.equals("}") && !line.contains("else") && !line.contains("if")) {
+                        System.out.println("Line " + count + ": is missing semicolon");
+                    }
+                }
             }
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
