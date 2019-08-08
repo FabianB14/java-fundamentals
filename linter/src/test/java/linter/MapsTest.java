@@ -14,6 +14,6 @@ public class MapsTest {
                 {55, 54, 60, 53, 59, 57, 61},
                 {65, 56, 55, 52, 55, 62, 57}
         };
-        assertEquals("testing the test","working on it", Maps.maps(weeklyMonthTemperatures));
+        assertEquals("testing the test","Temps are here:", Maps.maps(weeklyMonthTemperatures));
     }
 }

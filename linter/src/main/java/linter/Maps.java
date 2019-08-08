@@ -11,9 +11,8 @@ public class Maps {
                 {55, 54, 60, 53, 59, 57, 61},
                 {65, 56, 55, 52, 55, 62, 57}
         };
-      System.out.println(maps(weeklyMonthTemperatures));
     }
-    public static HashSet<String> maps(int[][]arrOfArr) {
+    public static String maps(int[][]arrOfArr) {
         HashSet<Integer> temps = new HashSet<>();
         HashSet <String> tempsDone = new HashSet<>();
         int min = 100;
@@ -39,7 +38,8 @@ public class Maps {
                 }
             }
         }
-        return tempsDone;
+        System.out.println(tempsDone);
+        return "Temps are here:";
     }
 }
 
