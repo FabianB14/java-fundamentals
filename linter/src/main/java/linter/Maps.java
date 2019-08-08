@@ -32,7 +32,6 @@ public class Maps {
               tempsDone.add("Low:" + min );
         for(Integer temp : temps){
             for (int i = min; i < max; i++){
-                System.out.println(temp);
                 if (temp != i) {
                     tempsDone.add("Never saw temperature:" + i);
                 }
