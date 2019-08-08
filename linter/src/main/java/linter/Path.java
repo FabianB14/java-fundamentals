@@ -3,6 +3,7 @@ package linter;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class Path {
@@ -10,7 +11,8 @@ public class Path {
         path();
     }
 
-    public static void path() {
+    public static String  path() {
+        String errors = "";
         Scanner scan = null;
         int count = 0;
         try {
@@ -19,17 +21,15 @@ public class Path {
                 count++;
                 String line = scan.nextLine();
                 if(line.length() != 0) {
-                    String lineEnd = line.substring(line.length()-1);
-
-                    System.out.println(lineEnd);
-
-                    if (!lineEnd.equals(";") && !lineEnd.equals("{")  && !lineEnd.equals("}") && !line.contains("else") && !line.contains("if")) {
-                        System.out.println("Line " + count + ": is missing semicolon");
+                    if (!line.endsWith(";") && !line.endsWith("{")  && !line.equals("}") && !line.contains("else") && !line.contains("if")) {
+                        System.out.println("Line " + count + ": is missing semicolon.\n");
+                       errors = errors +"Line " + count + ": is missing semicolon.\n";
                     }
                 }
             }
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
         }
+        return errors;
     }
 }
