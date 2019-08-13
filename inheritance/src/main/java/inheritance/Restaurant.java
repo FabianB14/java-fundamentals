@@ -1,12 +1,12 @@
 package inheritance;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Restaurant {
     String name;
     int stars;
     String priceRange;
-    ArrayList <Reviews> reviews = new ArrayList<>();
+    LinkedList<Reviews> reviews = new LinkedList<>();
 
     public Restaurant(String name, int stars, String princeRange){
         this.name = name;
@@ -24,6 +24,12 @@ public class Restaurant {
             sum += this.reviews.get(i).stars;
         }
         this.stars = sum/this.reviews.size();
+    }
+    public boolean compareStars(Restaurant restaurant){
+        if(this.stars == restaurant.stars){
+            return true;
+        }
+        return false;
     }
 
 }
