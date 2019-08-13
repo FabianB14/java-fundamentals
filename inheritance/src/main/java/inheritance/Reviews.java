@@ -21,11 +21,10 @@ public class Reviews {
 
     }
 
-    public String addReview(String author, Restaurant restaurant, int stars, String body ){
-        Reviews newReview = new Reviews(author,stars,body,restaurant);
-        restaurant.reviews.add(newReview);
-        restaurant.updateStars(newReview);
-        return newReview.reviewToString();
+    public String addReview(Restaurant restaurant){
+        restaurant.reviews.add(this);
+        restaurant.updateStars(this);
+        return this.reviewToString();
     }
 }
 
