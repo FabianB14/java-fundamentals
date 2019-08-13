@@ -16,7 +16,6 @@ public class Reviews {
     public String reviewToString(){
         String reviewString = this.author + " Says: " + this.body + " and also rated " + this.restaurant.name + " with "
                 + this.stars;
-
         return reviewString;
 
     }
