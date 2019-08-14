@@ -1,35 +1,28 @@
 package inheritance;
 
-import java.util.LinkedList;
+public class Restaurant extends Business implements Yelpie {
 
-public class Restaurant {
-    String name;
-    int stars;
-    String priceRange;
-    LinkedList<Reviews> reviews = new LinkedList<>();
 
     public Restaurant(String name, int stars, String princeRange){
-        this.name = name;
-        this.stars = stars;
-        this.priceRange = princeRange;
+        super(name,stars,princeRange);
     }
-    public String restaurantToString(){
+
+    public String toString(){
         String restaurantString = this.name + " has " + this.stars + " stars and is priced at " + priceRange;
         return  restaurantString;
     }
-    public void updateStars(Reviews review){
-        int sum = 0;
-        for(int i = 0; i < this.reviews.size();i++){
-            System.out.println(this.reviews.get(i).stars);
-            sum += this.reviews.get(i).stars;
-        }
-        this.stars = sum/this.reviews.size();
-    }
+
     public boolean compareStars(Restaurant restaurant){
         if(this.stars == restaurant.stars){
             return true;
         }
         return false;
+    }
+
+    public String addReview(Reviews review){
+        this.reviews.add(review);
+        this.updateStars(review);
+        return review.reviewToString();
     }
 
 }

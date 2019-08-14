@@ -4,26 +4,22 @@ public class Reviews {
     String author;
     int stars;
     String body;
-    Restaurant restaurant;
+    Business business;
 
-    public Reviews(String author, int stars, String body, Restaurant restaurant){
+    public Reviews(String author, int stars, String body, Business business){
         this.author = author;
         this.stars = stars;
         this.body = body;
-        this.restaurant = restaurant;
+        this.business = business;
     }
 
     public String reviewToString(){
-        String reviewString = this.author + " Says: " + this.body + " and also rated " + this.restaurant.name + " with "
+        String reviewString = this.author + " Says: " + this.body + " and also rated " + this.business.name + " with "
                 + this.stars;
         return reviewString;
 
     }
 
-    public String addReview(Restaurant restaurant){
-        restaurant.reviews.add(this);
-        restaurant.updateStars(this);
-        return this.reviewToString();
-    }
+
 }
 
