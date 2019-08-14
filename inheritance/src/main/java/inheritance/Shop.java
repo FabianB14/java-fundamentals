@@ -10,7 +10,7 @@ public class Shop extends Business implements Yelpie {
     }
     //This is the toString method for Shop it will return a string that would e understood
     public String toSring(){
-        String shopString = this.name + " shop is " + this.description + " with a price range of " + this.priceRange;
+        String shopString = this.name + " shop " + this.description + " with a price range of " + this.priceRange;
         return shopString;
     }
     public String addReview(Reviews review){

@@ -1,7 +1,7 @@
 package inheritance;
 
 public class Movies{
-    static String name;
+    String name;
     String rated;
     Theater theater;
 

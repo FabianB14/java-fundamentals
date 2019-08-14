@@ -1,8 +1,5 @@
 package inheritance;
 
-import com.google.common.base.Joiner;
-
-import java.util.Collections;
 import java.util.LinkedList;
 
 public class Theater extends Business implements Yelpie {
@@ -12,19 +9,26 @@ public class Theater extends Business implements Yelpie {
     //this is the constructor for the Theater class
     public Theater(String name, int stars) {
         super(name, stars);
+        this.name = name;
+        System.out.println(name);
 
     }
 
     //this is the toString method which will return a string in reasonable format
     public String toString(){
-        String movies = Joiner.on("").join(Collections.singleton(Movies.name));
+        String movies = "";
+        for(int i = 0; i < this.moviesLinkedList.size(); i++) {
+            Movies moviesContainer =  this.moviesLinkedList.get(i);
+            System.out.println(moviesContainer.name);
+            movies += moviesContainer.name + " ";
+        }
         String theString = this.name + " is a great place to watch a movie, you can watch "+ movies;
         return theString;
     }
     //this is the addMovie method and it will a a movie to this theater and add the movie to the linked list
     public void addMovie(String movieName){
         Movies newMovie = new Movies(movieName,this);
-        moviesLinkedList.add(newMovie);
+        this.moviesLinkedList.add(newMovie);
     }
     //this is the remove a movie method and will search the linked list for a certain movie name and will remove that movie
     public String removeMovie(String movieName){

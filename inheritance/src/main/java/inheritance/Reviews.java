@@ -15,11 +15,8 @@ public class Reviews {
 
     public String reviewToString(){
         String reviewString = this.author + " Says: " + this.body + " and also rated " + this.business.name + " with "
-                + this.stars;
+                + this.stars + " stars ";
         return reviewString;
-
     }
-
-
 }
 
