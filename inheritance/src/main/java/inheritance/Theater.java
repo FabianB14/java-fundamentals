@@ -19,7 +19,6 @@ public class Theater extends Business implements Yelpie {
         String movies = "";
         for(int i = 0; i < this.moviesLinkedList.size(); i++) {
             Movies moviesContainer =  this.moviesLinkedList.get(i);
-            System.out.println(moviesContainer.name);
             movies += moviesContainer.name + " ";
         }
         String theString = this.name + " is a great place to watch a movie, you can watch "+ movies;
